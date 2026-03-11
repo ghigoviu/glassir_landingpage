@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- 5. Header -->
+  <!-- Component Placeholders -->
   <header class="header" id="header">
     <div class="top-bar">
       <div class="container">
@@ -30,13 +30,16 @@
     
     <nav class="main-nav">
       <div class="container">
-        <a href="#inicio" class="logo">GRUPO<span>GLASIR</span></a>
+        <a href="#inicio" class="logo">
+          <img src="assets/Logo_Glassir-removebg-preview1.png" height="80" alt="Logo GLASIR" id="logo-img">
+        </a>
         
         <ul class="nav-links" id="nav-links">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#establecimientos">Establecimientos</a></li>
           <li><a href="#experiencia">Nosotros</a></li>
+          <li><a href="#directores">Directores</a></li>
           <li><a href="#noticias">Noticias</a></li>
           <li><a href="#contacto" class="btn btn-gold">Defensa Legal</a></li>
         </ul>
@@ -48,20 +51,18 @@
     </nav>
   </header>
 
-  <!-- 7. Hero Principal -->
   <section id="inicio" class="hero">
-    <div class="container">
-      <h1 class="reveal">Defensa legal para establecimientos frente a <span>verificaciones y sanciones.</span></h1>
-      <p class="reveal reveal-delay-1">Protegemos la operación de consultorios, restaurantes, spas y negocios regulados ante autoridades administrativas y sanitarias.</p>
-      
-      <div class="hero-btns reveal reveal-delay-2">
-        <a href="#contacto" class="btn btn-gold">Defensa inmediata</a>
-        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
-      </div>
+  <div class="container">
+    <h1 class="reveal">Defensa legal para establecimientos frente a <span>verificaciones y sanciones.</span></h1>
+    <p class="reveal reveal-delay-1">Protegemos la operación de consultorios, restaurantes, spas y negocios regulados ante autoridades administrativas y sanitarias.</p>
+    
+    <div class="hero-btns reveal reveal-delay-2">
+      <a href="#contacto" class="btn btn-gold">Defensa inmediata</a>
+      <a href="#servicios" class="btn btn-outline">Ver servicios</a>
     </div>
+  </div>
   </section>
 
-  <!-- 8. Servicios Principales -->
   <section id="servicios" class="services-section">
     <div class="container">
       <div class="section-header reveal">
@@ -113,9 +114,8 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- 9. Establecimientos que defendemos -->
+  </section>  
+  
   <section id="establecimientos" class="establishments-section">
     <div class="container">
       <div class="section-header reveal">
@@ -158,27 +158,25 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>  
 
-  <!-- 10. Problemas / Verificaciones -->
-  <section class="problems-section">
-    <div class="container">
-      <div class="problems-content reveal">
-        <h2>Protegemos tu operación frente a la autoridad.</h2>
-        <p>¿Enfrenta alguno de estos problemas? Actuar a tiempo es la clave para minimizar riesgos legales y financieros que pongan en peligro la viabilidad de su negocio.</p>
-        
-        <div class="problem-tags">
-          <span class="problem-tag">Verificaciones Administrativas</span>
-          <span class="problem-tag">Verificaciones Sanitarias</span>
-          <span class="problem-tag">Multas Excesivas</span>
-          <span class="problem-tag">Clausuras de Negocio</span>
-          <span class="problem-tag">Suspensión de Actividades</span>
-        </div>
+<section class="problems-section">
+  <div class="container">
+    <div class="problems-content reveal">
+      <h2>Protegemos tu operación frente a la autoridad.</h2>
+      <p>¿Enfrenta alguno de estos problemas? Actuar a tiempo es la clave para minimizar riesgos legales y financieros que pongan en peligro la viabilidad de su negocio.</p>
+      
+      <div class="problem-tags">
+        <span class="problem-tag">Verificaciones Administrativas</span>
+        <span class="problem-tag">Verificaciones Sanitarias</span>
+        <span class="problem-tag">Multas Excesivas</span>
+        <span class="problem-tag">Clausuras de Negocio</span>
+        <span class="problem-tag">Suspensión de Actividades</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>  
 
-  <!-- 11. Experiencia del despacho -->
   <section id="experiencia" class="experience-section">
     <div class="container">
       <div class="experience-grid">
@@ -204,9 +202,55 @@
         </div>
       </div>
     </div>
+  </section>  
+
+  <section id="directores" class="directors-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Nuestros Directores</h2>
+        <p>Liderazgo jurídico especializado y visión estratégica en defensa corporativa y regulatoria.</p>
+      </div>
+      
+      <div class="directors-grid">
+        <div class="director-card reveal reveal-delay-1">
+          <div class="director-image">
+            <div class="image-placeholder">
+              <!-- Placeholder for Lawyer 1 Photo -->
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80" alt="Abogado Director 1">
+            </div>
+          </div>
+          <div class="director-info">
+            <h3>Lic. [Nombre Abogado 1]</h3>
+            <h4>Socio Fundador - Litigio Administrativo</h4>
+            <p>Especialista en derecho administrativo sancionador con amplia trayectoria en la defensa de establecimientos mercantiles ante autoridades como COFEPRIS e INVEA. Su enfoque se centra en el blindaje preventivo y la anulación de resoluciones sancionatorias.</p>
+            <div class="director-links">
+              <a href="#"><i class="ph ph-linkedin-logo"></i> Perfil Profesional</a>
+              <a href="#"><i class="ph ph-envelope-simple"></i> Contactar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="director-card reveal reveal-delay-2">
+          <div class="director-image">
+            <div class="image-placeholder">
+              <!-- Placeholder for Lawyer 2 Photo -->
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" alt="Abogada Directora 2">
+            </div>
+          </div>
+          <div class="director-info">
+            <h3>Lic. [Nombre Abogado 2]</h3>
+            <h4>Socio Director - Regulación Sanitaria</h4>
+            <p>Experta en el marco normativo de salud y operaciones comerciales. Ha asesorado exitosamente a decenas de clínicas, hospitales y desarrollos restauranteros, diseñando estrategias legales que garantizan la continuidad de las operaciones ante verificaciones complejas.</p>
+            <div class="director-links">
+              <a href="#"><i class="ph ph-linkedin-logo"></i> Perfil Profesional</a>
+              <a href="#"><i class="ph ph-envelope-simple"></i> Contactar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 12. Proceso de Defensa -->
   <section class="process-section">
     <div class="container">
       <div class="section-header reveal">
@@ -239,7 +283,6 @@
     </div>
   </section>
 
-  <!-- 13. Noticias -->
   <section id="noticias" class="news-section">
     <div class="container">
       <div class="section-header reveal">
@@ -278,7 +321,6 @@
     </div>
   </section>
 
-  <!-- 14. Contacto -->
   <section id="contacto" class="contact-section">
     <div class="container">
       <div class="contact-container reveal">
@@ -313,7 +355,7 @@
         </div>
         
         <div class="contact-form-wrapper">
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Solicitud enviada exitosamente. Un abogado se pondrá en contacto a la brevedad.');">
+          <form class="contact-form" id="contact-form">
             <div class="form-group">
               <label for="nombre">Nombre Completo</label>
               <input type="text" id="nombre" class="form-control" placeholder="Lic. / Ing. / Dr." required>
@@ -344,12 +386,13 @@
     </div>
   </section>
 
-  <!-- 15. Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="#" class="footer-logo">GRUPO<span>GLASIR</span></a>
+          <a href="#" class="footer-logo">
+            <img src="assets/Logo_Glassir-removebg-preview1.png" height="60" alt="Logo GLASIR" style="filter: brightness(0) invert(1);">
+          </a>
           <p>Despacho especializado en la defensa jurídica y estratégica de establecimientos frente a autoridades administrativas y sanitarias.</p>
         </div>
         

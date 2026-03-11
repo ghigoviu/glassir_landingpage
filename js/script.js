@@ -1,4 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Load Components
+async function loadComponent(id, file) {
+  try {
+    const response = await fetch(file);
+    if (!response.ok) throw new Error(`Error loading ${file}`);
+    const html = await response.text();
+    document.getElementById(id).innerHTML = html;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  
+  // Load all components concurrently
+  await Promise.all([
+    loadComponent('header-placeholder', 'components/header.html'),
+    loadComponent('hero-placeholder', 'components/hero.html'),
+    loadComponent('services-placeholder', 'components/services.html'),
+    loadComponent('establishments-placeholder', 'components/establishments.html'),
+    loadComponent('problems-placeholder', 'components/problems.html'),
+    loadComponent('experience-placeholder', 'components/experience.html'),
+    loadComponent('directors-placeholder', 'components/directors.html'),
+    loadComponent('process-placeholder', 'components/process.html'),
+    loadComponent('news-placeholder', 'components/news.html'),
+    loadComponent('contact-placeholder', 'components/contact.html'),
+    loadComponent('footer-placeholder', 'components/footer.html')
+  ]);
+
+  // After components are loaded, initialize functionality
 
   // Efecto de scroll para el Header
   const header = document.getElementById('header');
@@ -14,23 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileBtn = document.getElementById('mobile-btn');
   const navLinks = document.getElementById('nav-links');
 
-  mobileBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    const isActive = navLinks.classList.contains('active');
-    // Cambiar icono
-    mobileBtn.innerHTML = isActive ? '<i class="ph ph-x"></i>' : '<i class="ph ph-list"></i>';
-  });
-
-  // Cerrar menú móvil al hacer clic en enlaces
-  const navItems = document.querySelectorAll('.nav-links a');
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        mobileBtn.innerHTML = '<i class="ph ph-list"></i>';
-      }
+  if (mobileBtn && navLinks) {
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const isActive = navLinks.classList.contains('active');
+      // Cambiar icono
+      mobileBtn.innerHTML = isActive ? '<i class="ph ph-x"></i>' : '<i class="ph ph-list"></i>';
     });
-  });
+
+    // Cerrar menú móvil al hacer clic en enlaces
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          mobileBtn.innerHTML = '<i class="ph ph-list"></i>';
+        }
+      });
+    });
+  }
 
   // Animaciones tipo 'Framer' al hacer scroll con IntersectionObserver
   const revealElements = document.querySelectorAll('.reveal');
@@ -39,11 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Descomentar la siguiente línea si se desea que la animación ocurra solo una vez:
+        // Descomentar si se desea que la animación ocurra solo una vez
         // observer.unobserve(entry.target);
-      } else {
-        // Remover clase si se desea animación ida y vuelta. Por ahora lo dejamos para demostrar repetición.
-        // entry.target.classList.remove('active');
       }
     });
   };
