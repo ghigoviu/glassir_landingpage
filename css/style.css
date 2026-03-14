@@ -708,7 +708,7 @@ section {
   position: relative;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   background-color: var(--black);
   padding: 50px;

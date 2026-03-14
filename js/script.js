@@ -11,24 +11,6 @@ async function loadComponent(id, file) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  
-  // Load all components concurrently
-  await Promise.all([
-    loadComponent('header-placeholder', 'components/header.html'),
-    loadComponent('hero-placeholder', 'components/hero.html'),
-    loadComponent('services-placeholder', 'components/services.html'),
-    loadComponent('establishments-placeholder', 'components/establishments.html'),
-    loadComponent('problems-placeholder', 'components/problems.html'),
-    loadComponent('experience-placeholder', 'components/experience.html'),
-    loadComponent('directors-placeholder', 'components/directors.html'),
-    loadComponent('process-placeholder', 'components/process.html'),
-    loadComponent('news-placeholder', 'components/news.html'),
-    loadComponent('contact-placeholder', 'components/contact.html'),
-    loadComponent('footer-placeholder', 'components/footer.html')
-  ]);
-
-  // After components are loaded, initialize functionality
-
   // Efecto de scroll para el Header
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
