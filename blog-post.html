@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artículo Legal - Grupo GLASIR">
+  <title>Artículo | Grupo GLASIR</title>
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header" style="background-color: var(--black); padding-bottom: 20px;">
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-info">
+          <a href="tel:+525512345678"><i class="ph ph-phone"></i> +52 (55) 1234-5678</a>
+          <a href="mailto:contacto@grupoglasir.com"><i class="ph ph-envelope-simple"></i> contacto@grupoglasir.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="main-nav">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/Logo_Glassir-removebg-preview1.png" height="80" alt="Logo GLASIR" id="logo-img">
+        </a>
+        
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="blog.html" class="active" style="color: var(--gold);">Blog</a></li>
+          <li><a href="index.html#contacto" class="btn btn-gold">Defensa Legal</a></li>
+        </ul>
+        
+        <button class="mobile-menu-btn" id="mobile-btn">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Post Content -->
+  <main style="padding: 100px 0 60px;">
+    <div class="container" style="max-width: 800px;">
+      <div id="post-loading" style="text-align: center; padding: 50px;">
+        <p>Cargando artículo...</p>
+      </div>
+      
+      <div id="post-error" style="display: none; text-align: center; padding: 50px; color: red;">
+        <h2>Error al cargar el artículo</h2>
+        <p>El artículo solicitado no existe o hubo un problema de conexión.</p>
+        <a href="blog.html" class="btn btn-gold" style="margin-top:20px; display:inline-block;">Volver al blog</a>
+      </div>
+
+      <article id="post-content" style="display: none;">
+        <a href="blog.html" style="color: var(--gold); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 30px;"><i class="ph ph-arrow-left"></i> Volver al blog</a>
+        
+        <div style="margin-bottom: 25px;">
+          <span id="post-tag" style="background: var(--light-grey); color: var(--institutional-grey); padding: 4px 10px; border-radius: 4px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase;">Categoría</span>
+          <span id="post-date" style="color: var(--institutional-grey); margin-left: 15px; font-size: 0.9rem;">Fecha</span>
+        </div>
+        
+        <h1 id="post-title" style="font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 40px; color: var(--black); line-height: 1.2;">Cargando...</h1>
+        
+        <div id="post-body" style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+          <!-- Content HTML injected here -->
+        </div>
+        
+        <hr style="margin: 60px 0; border: none; border-top: 1px solid #E0E0E0;">
+        
+        <!-- CTA inside article -->
+        <div style="background-color: var(--light-grey); padding: 40px; border-radius: 12px; text-align: center;">
+          <h3 style="font-family: var(--font-heading); margin-bottom: 15px; font-size: 1.8rem;">¿Necesita asesoría sobre este tema?</h3>
+          <p style="margin-bottom: 25px; color: var(--institutional-grey);">Nuestro equipo legal está listo para revisar su caso y proteger su establecimiento.</p>
+          <a href="index.html#contacto" class="btn btn-gold">Contactar a un abogado ahora</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/Logo_Glassir-removebg-preview1.png" height="60" alt="Logo GLASIR" style="filter: brightness(0) invert(1);">
+          </a>
+          <p>Despacho especializado en la defensa jurídica y estratégica de establecimientos frente a autoridades administrativas y sanitarias.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const API_BASE = 'http://localhost:3000';
+
+    async function loadPost() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('slug');
+
+      if (!slug) {
+        showError();
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/posts/${slug}`);
+        if (!res.ok) {
+          showError();
+          return;
+        }
+        
+        const post = await res.json();
+        renderPost(post);
+      } catch (err) {
+        console.error(err);
+        showError();
+      }
+    }
+
+    function renderPost(post) {
+      document.getElementById('post-loading').style.display = 'none';
+      document.getElementById('post-content').style.display = 'block';
+      
+      document.title = `${post.title} | Blog Grupo GLASIR`;
+      document.getElementById('post-tag').textContent = post.tag;
+      document.getElementById('post-date').textContent = new Date(post.date).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-body').innerHTML = post.contentHtml;
+    }
+
+    function showError() {
+      document.getElementById('post-loading').style.display = 'none';
+      document.getElementById('post-error').style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPost);
+  </script>
+</body>
+</html>

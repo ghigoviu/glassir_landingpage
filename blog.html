@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog de Grupo GLASIR - Actualidad Legal y Defensa Estratégica para Establecimientos.">
+  <title>Blog | Grupo GLASIR</title>
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-info">
+          <a href="tel:+525512345678"><i class="ph ph-phone"></i> +52 (55) 1234-5678</a>
+          <a href="mailto:contacto@grupoglasir.com"><i class="ph ph-envelope-simple"></i> contacto@grupoglasir.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="main-nav">
+      <div class="container">
+        <a href="index.html" class="">
+          <img src="assets/Logo_Glassir-removebg-preview1.png" height="80" alt="Logo GLASIR" id="logo-img">
+        </a>
+        
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html#inicio" style="color: var(--black);">Inicio</a></li>
+          <li><a href="index.html#servicios" style="color: var(--black);">Servicios</a></li>
+          <li><a href="index.html#establecimientos" style="color: var(--black);">Establecimientos</a></li>
+          <li><a href="index.html#experiencia" style="color: var(--black);">Nosotros</a></li>
+          <li><a href="blog.html" class="active" style="color: var(--gold);">Blog</a></li>
+          <li><a href="index.html#contacto" class="btn btn-gold">Defensa Legal</a></li>
+        </ul>
+        
+        <button class="mobile-menu-btn" id="mobile-btn">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Blog Header -->
+  <section class="blog-hero" style="padding: 120px 0 60px; background-color: var(--light-grey); text-align: center;">
+    <div class="container">
+      <h1 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--black); margin-bottom: 20px; padding-top: 50px;">Blog de Defensa Legal para Establecimientos</h1>
+      <p style="color: var(--institutional-grey); max-width: 600px; margin: 0 auto;">Noticias regulatorias, criterios de verificación y estrategias de defensa administrativa y sanitaria.</p>
+      
+      <!-- Filters -->
+      <div class="blog-filters" style="margin-top: 40px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <button class="filter-btn active" data-tag="">Todos</button>
+        <button class="filter-btn" data-tag="Verificaciones">Verificaciones</button>
+        <button class="filter-btn" data-tag="Multa">Multa</button>
+        <button class="filter-btn" data-tag="Clausura">Clausura</button>
+        <button class="filter-btn" data-tag="Regularización">Regularización</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog List -->
+  <section class="blog-list-section" style="padding: 60px 0;">
+    <div class="container">
+      <div id="blog-grid" class="news-grid" style="min-height: 400px;">
+        <!-- Posts will be injected here via JS -->
+        <p style="text-align: center; width: 100%; color: var(--institutional-grey);">Cargando artículos...</p>
+      </div>
+      
+      <!-- Pagination -->
+      <div id="pagination" style="margin-top: 50px; display: flex; justify-content: center; gap: 10px;">
+        <!-- Pagination buttons injected here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" style="background-color: var(--black); padding: 80px 0; color: white; text-align: center;">
+    <div class="container">
+      <h2>¿Enfrenta una verificación o clausura inminente?</h2>
+      <p style="color: #ccc; max-width: 600px; margin: 20px auto 30px;">Actúe a tiempo. Nuestro equipo jurídico especializado analizará su caso de forma confidencial para brindarle una estrategia de protección inmediata.</p>
+      <a href="index.html#contacto" class="btn btn-gold">Solicitar defensa legal urgente</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/Logo_Glassir-removebg-preview1.png" height="60" alt="Logo GLASIR" style="filter: brightness(0) invert(1);">
+          </a>
+          <p>Despacho especializado en la defensa jurídica y estratégica de establecimientos frente a autoridades administrativas y sanitarias.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contacto Rápido</h3>
+          <ul class="footer-links">
+            <li><a href="tel:+525512345678"><i class="ph ph-phone"></i> +52 (55) 1234-5678</a></li>
+            <li><a href="mailto:contacto@grupoglasir.com"><i class="ph ph-envelope"></i> contacto@grupoglasir.com</a></li>
+            <li><a href="#"><i class="ph ph-map-pin"></i> WTC, CDMX</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Legales y Enlaces</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="ph ph-shield"></i> Aviso de Privacidad</a></li>
+            <li><a href="#"><i class="ph ph-shield"></i> Términos y Condiciones</a></li>
+            <li><a href="blog.html"><i class="ph ph-newspaper"></i> Noticias Regulatorias</a></li>
+            <li><a href="#"><i class="ph ph-linkedin-logo"></i> Perfil de LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright_text">
+          2026 All Rights Reserved. Developed by <a href="https://linktr.ee/rcambray.dev">rcambray.dev</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const API_BASE = 'http://localhost:3000';
+    let currentPage = 1;
+    let currentTag = '';
+
+    async function loadPosts(page = 1, tag = '') {
+      currentPage = page;
+      currentTag = tag;
+      
+      try {
+        const url = new URL(`${API_BASE}/api/posts`);
+        url.searchParams.set('page', page);
+        if (tag) url.searchParams.set('tag', tag);
+        
+        const res = await fetch(url.toString());
+        if (!res.ok) throw new Error('Error al cargar posts');
+        const data = await res.json();
+        
+        renderPosts(data.posts);
+        renderPagination(data.total, data.page, data.pageSize);
+      } catch (err) {
+        console.error(err);
+        document.getElementById('blog-grid').innerHTML = '<p style="text-align: center; width: 100%; color: red;">No se pudieron cargar los artículos. Asegúrate de que el backend esté en ejecución.</p>';
+      }
+    }
+
+    function renderPosts(posts) {
+      const container = document.getElementById('blog-grid');
+      container.innerHTML = '';
+      
+      if (posts.length === 0) {
+        container.innerHTML = '<p style="text-align: center; width: 100%;">No hay artículos disponibles para esta categoría.</p>';
+        return;
+      }
+
+      posts.forEach(post => {
+        const article = document.createElement('article');
+        article.className = 'news-card'; // Reutilizando estilo del home
+        article.innerHTML = `
+          <div class="news-content">
+            <span class="news-date">${new Date(post.date).toLocaleDateString('es-MX', { year: 'numeric', month: 'long' })}</span>
+            <span class="post-badge" style="display:inline-block; font-size: 0.75rem; text-transform: uppercase; background: var(--light-grey); color: var(--institutional-grey); padding: 4px 8px; border-radius: 4px; margin-left: 10px; font-weight: 600;">${post.tag}</span>
+            <h3 class="news-title" style="margin-top: 15px;">${post.title}</h3>
+            <p class="news-excerpt">${post.excerpt}</p>
+            <a href="blog-post.html?slug=${post.slug}" class="service-link">Leer artículo <i class="ph ph-arrow-right" style="position:relative; top:2px;"></i></a>
+          </div>
+        `;
+        container.appendChild(article);
+      });
+    }
+
+    function renderPagination(total, page, pageSize) {
+      const totalPages = Math.ceil(total / pageSize);
+      const paginationContainer = document.getElementById('pagination');
+      paginationContainer.innerHTML = '';
+      
+      if (totalPages <= 1) return;
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = 'page-btn';
+        if (i === page) {
+          btn.style.backgroundColor = 'var(--gold)';
+          btn.style.color = 'white';
+          btn.style.border = 'none';
+        } else {
+          btn.style.backgroundColor = 'transparent';
+          btn.style.border = '1px solid var(--gold)';
+          btn.style.color = 'var(--gold)';
+        }
+        btn.style.padding = '8px 15px';
+        btn.style.cursor = 'pointer';
+        btn.style.fontWeight = '600';
+        btn.style.transition = 'all 0.3s ease';
+        
+        btn.addEventListener('click', () => loadPosts(i, currentTag));
+        // Add hover effect via JS since inline styles override hover
+        btn.addEventListener('mouseover', () => { if(i !== page) { btn.style.backgroundColor = 'var(--gold)'; btn.style.color = 'white'; } });
+        btn.addEventListener('mouseout', () => { if(i !== page) { btn.style.backgroundColor = 'transparent'; btn.style.color = 'var(--gold)'; } });
+        
+        paginationContainer.appendChild(btn);
+      }
+    }
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      // Style filter buttons
+      btn.style.padding = '8px 20px';
+      btn.style.borderRadius = '30px';
+      btn.style.border = '1px solid var(--institutional-grey)';
+      btn.style.background = 'white';
+      btn.style.cursor = 'pointer';
+      btn.style.fontFamily = 'var(--font-body)';
+      btn.style.fontSize = '0.9rem';
+      btn.style.transition = 'all 0.3s ease';
+      
+      if (btn.classList.contains('active')) {
+        btn.style.background = 'var(--black)';
+        btn.style.color = 'white';
+        btn.style.border = '1px solid var(--black)';
+      }
+
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active');
+          b.style.background = 'white';
+          b.style.color = 'black';
+          b.style.border = '1px solid var(--institutional-grey)';
+        });
+        e.target.classList.add('active');
+        e.target.style.background = 'var(--black)';
+        e.target.style.color = 'white';
+        e.target.style.border = '1px solid var(--black)';
+        
+        loadPosts(1, e.target.dataset.tag);
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => loadPosts(1, ''));
+  </script>
+</body>
+</html>

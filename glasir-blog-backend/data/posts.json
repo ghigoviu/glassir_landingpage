@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "slug": "nuevos-criterios-verificaciones-cofepris",
+    "title": "Nuevos criterios en verificaciones de COFEPRIS para consultorios",
+    "date": "2026-10-10",
+    "tag": "Verificaciones",
+    "excerpt": "Análisis de las recientes actualizaciones en normativas sanitarias y cómo afectan a consultorios.",
+    "contentHtml": "<p>Las verificaciones de COFEPRIS han endurecido sus criterios en el último trimestre. Las recientes actualizaciones en normativas sanitarias exigen que los consultorios cuenten con un expediente clínico integrado y protocolos de esterilización documentados.</p><p>Es clave realizar auditorías preventivas integrales para evitar suspensiones de actividades infundadas.</p>",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "slug": "responder-orden-clausura-inminente",
+    "title": "Cómo responder ante una orden de clausura inminente",
+    "date": "2026-09-15",
+    "tag": "Clausura",
+    "excerpt": "Guía rápida de acciones legales y amparos para evitar el cierre forzoso de establecimientos mercantiles.",
+    "contentHtml": "<p>Ante una orden de clausura, el factor tiempo es crítico. Los inspectores deben identificarse plenamente y exhibir la orden escrita fundamentada de la autoridad correspondiente.</p><p>Usted tiene derecho a dejar observaciones en el acta de visita y solicitar la defensa legal mediante un recurso de inconformidad o amparo indirecto antes de que se ejecute la clausura definitiva.</p>",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "slug": "multas-comunes-sector-restaurantero",
+    "title": "Las 5 multas más comunes en el sector restaurantero",
+    "date": "2026-08-20",
+    "tag": "Multa",
+    "excerpt": "Prevenir es la mejor defensa. Conoce cuáles son las omisiones que más sanciones económicas generan.",
+    "contentHtml": "<ol><li>Falta de aviso de funcionamiento actualizado.</li><li>Condiciones higiénicas deficientes en el área de cocina.</li><li>Falta de capacitación documentada en manejo de alimentos (NOM-251).</li><li>Certificados médicos del personal vencidos.</li><li>Falta de trampas de grasa o manejo inadecuado de residuos.</li></ol><p>Estas omisiones no solo generan multas excesivas sino que pueden derivar en la suspensión temporal del establecimiento.</p>",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "slug": "regularizacion-spas",
+    "title": "El reto de la regularización en Spas y Clínicas de Belleza",
+    "date": "2026-07-05",
+    "tag": "Regularización",
+    "excerpt": "Asegura la operación de tu negocio de belleza cumpliendo con la regulación vigente de aparatología.",
+    "contentHtml": "<p>El uso de aparatología estética sin el registro o aviso correspondiente es una de las principales causas de multas en Spas.</p><p>Es vital que todo equipo cuente con su registro sanitario y que el personal esté certificado según las competencias requeridas por la Secretaría de Salud y COFEPRIS.</p>",
+    "featured": false
+  }
+]
