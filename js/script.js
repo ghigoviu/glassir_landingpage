@@ -10,18 +10,48 @@ async function loadComponent(id, file) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  // Efecto de scroll para el Header
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+function buildWhatsAppContactUrl(form) {
+  const whatsappNumber = '525525668086';
+  const nombre = form.querySelector('#nombre')?.value.trim() || 'No especificado';
+  const telefono = form.querySelector('#telefono')?.value.trim() || 'No especificado';
+  const correo = form.querySelector('#correo')?.value.trim() || 'No especificado';
+  const mensaje = form.querySelector('#mensaje')?.value.trim() || 'No especificado';
 
-  // Menú móvil (Hamburguesa)
+  const whatsappMessage = [
+    'Hola, me gustaria solicitar defensa legal para mi negocio.',
+    '',
+    `Nombre: ${nombre}`,
+    `Telefono: ${telefono}`,
+    `Correo: ${correo}`,
+    '',
+    'Situacion:',
+    mensaje
+  ].join('\n');
+
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+}
+
+function redirectContactFormToWhatsApp(form) {
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  window.location.href = buildWhatsAppContactUrl(form);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const header = document.getElementById('header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+
   const mobileBtn = document.getElementById('mobile-btn');
   const navLinks = document.getElementById('nav-links');
 
@@ -29,11 +59,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     mobileBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       const isActive = navLinks.classList.contains('active');
-      // Cambiar icono
       mobileBtn.innerHTML = isActive ? '<i class="ph ph-x"></i>' : '<i class="ph ph-list"></i>';
     });
 
-    // Cerrar menú móvil al hacer clic en enlaces
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
       item.addEventListener('click', () => {
@@ -45,22 +73,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Animaciones tipo 'Framer' al hacer scroll con IntersectionObserver
   const revealElements = document.querySelectorAll('.reveal');
 
-  const revealCallback = (entries, observer) => {
+  const revealCallback = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Descomentar si se desea que la animación ocurra solo una vez
-        // observer.unobserve(entry.target);
       }
     });
   };
 
   const revealOptions = {
     threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: '0px 0px -50px 0px'
   };
 
   const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
@@ -69,26 +94,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     revealObserver.observe(el);
   });
 
-  // Validación básica del formulario de contacto simulado
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
-      
-      // Simular botón de carga
-      btn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> Enviando...';
-      btn.disabled = true;
-      
-      setTimeout(() => {
-        alert('Solicitud enviada exitosamente. Un abogado se pondrá en contacto a la brevedad para atender su verificación.');
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        contactForm.reset();
-      }, 1500);
+      redirectContactFormToWhatsApp(contactForm);
     });
   }
-
 });
