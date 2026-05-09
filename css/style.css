@@ -1002,6 +1002,14 @@ textarea.form-control {
   margin-bottom: 14px;
 }
 
+.legal-document ul {
+  margin-bottom: 14px;
+}
+
+.legal-document li {
+  color: var(--grey);
+}
+
 .legal-document a {
   color: var(--gold);
   font-weight: 700;
@@ -1386,4 +1394,9 @@ textarea.form-control {
 
 .whatsapp-float {
     animation: pulse 2s infinite;
+}
+
+.legal-indent {
+    margin-left: 15px;
+    text-indent: 15px;
 }
